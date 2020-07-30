@@ -1,0 +1,15 @@
+@import "../../common.scss";
+
+.container {
+    max-width: 640px;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: $page-background;
+}
+
+@include md {
+    .container {
+        max-width: 980px;
+    }
+}

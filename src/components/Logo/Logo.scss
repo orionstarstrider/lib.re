@@ -1,0 +1,31 @@
+@import "../../common.scss";
+
+@font-face {
+    font-family: 'Ranchers';
+    src: url('../../fonts/Ranchers-Regular.ttf');
+    font-style: normal;
+    font-weight: 500;
+}
+
+.logo {
+    font-family: 'Ranchers';
+    font-size: 28px;
+    height: 1em;
+    margin-bottom: 2px;
+    line-height: 1em;
+    vertical-align: middle;
+    text-shadow: 0 0 2px rgba(0,0,0,.2);
+
+    &__suffix {
+        color: $alt-color;
+    }
+
+    a {
+        text-decoration: none;
+        color: #FFF;
+
+        &:visited {
+            color: #FFF;
+        }
+    }
+}

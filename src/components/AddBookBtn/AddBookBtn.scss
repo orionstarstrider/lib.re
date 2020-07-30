@@ -1,0 +1,26 @@
+@import "../../common.scss";
+
+.add_book_btn {
+    cursor: pointer;
+    padding-bottom: 3px;
+    box-sizing: border-box;
+    line-height: 1em;
+    font-weight: 500;
+    color: #FFF;
+    border-bottom: 1.5px solid transparent;
+    background: transparent;
+    transition: .12s;
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:hover {
+        border-color:#FFF;
+    }
+
+    &__plus {
+        margin-right: 4px;
+        font-size: 1.5em;
+    }
+}

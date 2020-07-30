@@ -4,13 +4,19 @@ import {
   Route,
   Switch
 } from "react-router-dom"
+import Container from './containers/Container'
+import Header from './containers/Header'
+import Main from './containers/Main'
 import Page404 from './components/Page404'
 
 export default () => (
   <Router>
     <Switch>
       <Route exact path="/">
-        <h1>LIB.RE</h1>
+        <Container>
+          <Header />
+          {/* <Main /> */}
+        </Container>
       </Route>
       <Route path="*">
         <Page404 />
