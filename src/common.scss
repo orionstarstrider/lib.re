@@ -9,10 +9,13 @@ $duration: .12s;
 $primary-color: teal;
 $primary-color-dark: #056666;
 $alt-color: #ff6c00;
+$error-color: #d81414;
 $base-text: #0D0D0D;
 $light-text: #F3F5F7;
 $background-color: #F3F5F7;
 $page-background: #FFF;
+$in-stock-color: #248a52;
+$out-of-stock-color: #d81414;
 
 
 @mixin xs {

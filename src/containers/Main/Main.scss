@@ -1,0 +1,9 @@
+@import "../../common.scss";
+
+.main {
+    padding: 15px;
+}
+
+@include md {
+    padding: 30px;
+}

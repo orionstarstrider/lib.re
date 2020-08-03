@@ -1,0 +1,36 @@
+{
+    "books": [
+        {
+            "id": 0,
+            "title": "title0",
+            "author": "author0",
+            "price": 12.3,
+            "published": "2020-01-01",
+            "inStock": true
+        },
+        {
+            "id": 1,
+            "title": "title1",
+            "author": "author1",
+            "price": 22.3,
+            "published": "2020-01-02",
+            "inStock": false
+        },
+        {
+            "id": 2,
+            "title": "title2",
+            "author": "author2",
+            "price": 32.3,
+            "published": "2020-02-01",
+            "inStock": false
+        },
+        {
+            "id": 3,
+            "title": "title3",
+            "author": "author3",
+            "price": 42,
+            "published": "2020-03-11",
+            "inStock": true
+        }
+    ]
+}
