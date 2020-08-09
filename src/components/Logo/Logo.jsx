@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import './Logo.scss'
+import s from'./Logo.module.scss'
 
-const Logo = () => (
-    <div className='logo'>
+const Logo = () =>
+    <div className={ s.logo }>
         <Link to="/" title="Lib.re Bookstore">
             LIB
-            <span className="logo__suffix">.RE</span>
+            <span className={ s.suffix }>.RE</span>
         </Link>
     </div>
-)
 
 export default Logo

@@ -6,7 +6,7 @@ import { showModal } from '../../redux/actions/app'
 import { MODE_EDIT, MODE_DELETE } from '../Modal/modes'
 import THead from './THead'
 import TRow from './TRow'
-import './BooksTable.scss'
+import s from './BooksTable.module.scss'
 
 const getColumnsTitles  = () => {
     const { fields } = booksModel
@@ -54,8 +54,8 @@ const BooksTable = ({
     const columns = getColumnsTitles ()
 
     return (
-        <div className='books_table__wrapper'>
-            <table className='books_table'>
+        <div className={ s.wrapper }>
+            <table className={ s.booksTable }>
                 <thead>
                     <THead cols={ columns } />
                 </thead>

@@ -1,6 +1,6 @@
 @import "../../common.scss";
 
-.add_book_btn {
+.addBookBtn {
     cursor: pointer;
     padding-bottom: 3px;
     box-sizing: border-box;
@@ -19,7 +19,7 @@
         border-color:#FFF;
     }
 
-    &__plus {
+    .plus {
         margin-right: 4px;
         font-size: 1.5em;
     }

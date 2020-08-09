@@ -1,11 +1,10 @@
 import React from 'react'
-import './Main.scss'
+import s from './Main.module.scss'
 
-const Main = props => (
-    <main className="main">
-        <h1 className="title">Lib.re Bookstore</h1>
-        { props.children }
+const Main = ({ children }) =>
+    <main className={ s.main }>
+        <h1 className={ s.title }>Lib.re Bookstore</h1>
+        { children }
     </main>
-)
 
 export default Main

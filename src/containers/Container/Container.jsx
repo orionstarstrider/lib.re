@@ -1,10 +1,9 @@
 import React from 'react'
-import './Container.scss'
+import s from './Container.module.scss'
 
-const Container = props => (
-    <div className='container'>
-        { props.children }
+const Container = ({ children }) =>
+    <div className={ s.container }>
+        { children }
     </div>
-)
 
 export default Container

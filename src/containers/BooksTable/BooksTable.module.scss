@@ -1,0 +1,48 @@
+@import "../../common.scss";
+
+.booksTable {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+
+    .actionsCol {
+        width: 80px;
+    }
+
+    .head {
+        text-align: left;
+        border-bottom: 3px solid $primary-color;
+
+        & > .cell {
+            padding: 16px 12px;
+    
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                min-width: 60px;
+            }
+            &:nth-child(4) {
+                min-width: 140px;
+            }
+            &:nth-child(5) {
+                min-width: 100px;
+            }
+        }
+    }
+
+    .cell {
+        padding: 12px;
+    }
+
+    .row {
+        &:only-child,
+        &:nth-child(2n) {
+            background:#e3f1f1;
+        }
+    }
+}
+
+.wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+}

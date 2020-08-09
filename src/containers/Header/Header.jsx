@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import './Header.scss'
+import s from './Header.module.scss'
 import Logo from '../../components/Logo'
 import AddBookBtn from '../../components/AddBookBtn'
 import { showModal } from '../../redux/actions/app'
@@ -8,7 +8,7 @@ import { MODE_ADD } from '../Modal/modes'
 
 
 const Header = ({ addNewBook }) => (
-    <header className='header'>
+    <header className={ s.header }>
         <Logo />
         <AddBookBtn onClick={ addNewBook } />
     </header>
