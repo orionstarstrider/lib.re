@@ -1,0 +1,64 @@
+@import "../../common.scss";
+
+.label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color:  $primary-color;
+    margin: 0 0 1.5em;
+    transition: .2s;
+
+    &.focused {
+        color: $alt-color;
+    }
+
+    &.invalid {
+        color: $error-color;
+
+        &.focused {
+            color: $error-color;
+        }
+
+        input {
+            border-color: $error-color;
+
+            &:focus {
+                border-color: $error-color;
+            }
+        }
+    }
+
+    &.checkbox {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 16px;
+    }
+
+    .input {
+        display: block;
+        width: 100%;
+        font-family: inherit;
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid $primary-color;
+        border-radius: 2px;
+        transition: .2s;
+        outline: none;
+        box-sizing: border-box;
+        padding: 6px 1px 4px;
+
+        &[type=checkbox] {
+            float: left;
+            width: .8em;
+            height: .8em;
+            padding: 0;
+            margin: 0 8px 0 0;
+        }
+
+        &:focus {
+            border-color: $alt-color;
+        }
+    }
+}

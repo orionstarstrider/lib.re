@@ -7,7 +7,10 @@ const booksModel = {
             title: 'ID',
             required: false,
             inputType: 'number',
-            display: false
+            display: false,
+            getFormattedInputVal(input) {
+                return parseInt(input.value)
+            }
         },
         {
             name: 'title',
@@ -29,7 +32,12 @@ const booksModel = {
             required: false,
             inputType: 'number',
             display: true,
+            getFormattedInputVal(input) {
+                return parseFloat(input.value)
+            },
             formatValue(value) {
+                if (!value) return <>{''}</>
+
                 let formattedPrice = value.toString().replace(/\s/g, '')
                 let rubles = '0'
                 let kopeykas
@@ -64,6 +72,8 @@ const booksModel = {
             inputType: 'date',
             display: true,
             formatValue(value) {
+                if (!value) return <>{''}</>
+
                 const getFullMonth = index => {
                     switch (index) {
                         case 0:
@@ -105,10 +115,13 @@ const booksModel = {
         },
         {
             name: 'inStock',
-            title: 'Status',
-            required: true,
+            title: 'In stock?',
+            required: false,
             inputType: 'checkbox',
             display: true,
+            getFormattedInputVal(input) {
+                return input.checked
+            },
             formatValue(value) {
                 return value
                     ? <span className="status in_stock">In stock</span>

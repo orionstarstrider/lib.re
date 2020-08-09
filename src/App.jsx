@@ -3,23 +3,15 @@ import {
   BrowserRouter as Router,
   Route,
   Switch
-} from "react-router-dom"
-import Container from './containers/Container'
-import Header from './containers/Header'
-import Main from './containers/Main'
-import BooksTable from './containers/BooksTable'
+} from 'react-router-dom'
+import HomePage from './containers/HomePage'
 import Page404 from './components/Page404'
 
 export default () => (
   <Router>
     <Switch>
       <Route exact path="/">
-        <Container>
-          <Header />
-          <Main>
-            <BooksTable />
-          </Main>
-        </Container>
+        <HomePage />
       </Route>
       <Route path="*">
         <Page404 />

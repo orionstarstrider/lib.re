@@ -4,6 +4,13 @@
     padding: 15px;
 }
 
+.title {
+    margin-top: 0;
+    line-height: 1;
+}
+
 @include md {
-    padding: 30px;
+    .main {
+        padding: 30px;
+    }
 }

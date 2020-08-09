@@ -1,9 +1,6 @@
 @import "../../common.scss";
 
 .book_action_btn {
-    cursor: pointer;
-    background: transparent;
-
     &:not(:last-child) {
         margin: 0 1em 0 0;
     }
@@ -18,9 +15,5 @@
         & svg {
             fill: $error-color;
         }
-    }
-
-    &:active {
-        transform: translateY(1px);
     }
 }

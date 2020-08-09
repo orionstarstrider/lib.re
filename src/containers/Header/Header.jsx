@@ -1,17 +1,24 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import './Header.scss'
 import Logo from '../../components/Logo'
 import AddBookBtn from '../../components/AddBookBtn'
+import { showModal } from '../../redux/actions/app'
+import { MODE_ADD } from '../Modal/modes'
 
-const addNewBook = () => {
-    console.log('new book')
-}
 
-const Header = () => (
+const Header = ({ addNewBook }) => (
     <header className='header'>
         <Logo />
-        <AddBookBtn onClick={addNewBook} />
+        <AddBookBtn onClick={ addNewBook } />
     </header>
 )
 
-export default Header
+const mapDispatchToProps = dispatch => ({
+    addNewBook: () => dispatch(showModal(MODE_ADD))
+})
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(Header)

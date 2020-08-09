@@ -1,0 +1,8 @@
+.button {
+    cursor: pointer;
+    background: transparent;
+
+    &:active {
+        transform: translateY(1px);
+    }
+}

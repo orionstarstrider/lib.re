@@ -16,7 +16,6 @@ const initialState = {
 const books = (state=initialState, action) => {
     switch(action.type) {
         case LOAD_BOOKS: {
-            console.log('LOADBOOKS')
             return {
                 ...state,
                 booksLoading: true,
@@ -50,7 +49,7 @@ const books = (state=initialState, action) => {
 
         case MODIFY_BOOK: {
             const { book: updatedBook } = action
-            const { bookId: targetId } = updatedBook
+            const { id: targetId } = updatedBook
             const { books } = state
             const updatedBooks = books.map(book => {
                 return book.id === targetId ? updatedBook : book
@@ -74,9 +73,11 @@ const books = (state=initialState, action) => {
         }
 
         default: {
-            return initialState
+            return {
+                ...state
+            }
         }
     }
 }
 
-export default books;
+export default books

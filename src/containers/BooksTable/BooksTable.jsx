@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import booksModel from '../../api'
 import { loadBooks } from '../../redux/actions/books'
+import { showModal } from '../../redux/actions/app'
+import { MODE_EDIT, MODE_DELETE } from '../Modal/modes'
 import THead from './THead'
 import TRow from './TRow'
 import './BooksTable.scss'
-
 
 const getColumnsTitles  = () => {
     const { fields } = booksModel
@@ -26,15 +27,14 @@ const getColumnsData = (columns, row) => {
     ])
 }
 
-const editBook = id => {
-    console.log('edit book', id)
-}
-
-const removeBook = id => {
-    console.log('remove book', id)
-}
-
-const BooksTable = ({ booksLoading, error, books, loadBooksTable }) => {
+const BooksTable = ({ 
+    booksLoading,
+    error,
+    books,
+    loadBooksTable,
+    handleDelete,
+    handleEdit
+}) => {
     useEffect(() => {
         loadBooksTable()
       }, [])
@@ -61,13 +61,13 @@ const BooksTable = ({ booksLoading, error, books, loadBooksTable }) => {
                 </thead>
                 <tbody>
                     { books.map(book => {
-                        const { id } = book
+                        const { id: bookId } = book
                         return <TRow
                             cols={ getColumnsData(columns, book) }
-                            editBook={ () => editBook(id) }
-                            removeBook={ () => removeBook(id) }
-                            bookId={ id }
-                            key={ id }
+                            editBook={ () => handleEdit({ bookId }) }
+                            removeBook={ () => handleDelete({ bookId }) }
+                            bookId={ bookId }
+                            key={ bookId }
                         />
                     }) }
                 </tbody>
@@ -76,14 +76,18 @@ const BooksTable = ({ booksLoading, error, books, loadBooksTable }) => {
     )
 }
 
-const mapStateToProps = ({ books: {booksLoading, error, books} }) => ({
+const mapStateToProps = ({ 
+    books: { booksLoading, error, books } 
+}) => ({
     booksLoading,
     error,
     books
 })
 
 const mapDispatchToProps = dispatch => ({
-    loadBooksTable: () => dispatch(loadBooks())
+    loadBooksTable: () => dispatch(loadBooks()),
+    handleDelete: data => dispatch(showModal(MODE_DELETE, data)),
+    handleEdit: data => dispatch(showModal(MODE_EDIT, data))
 })
 
 export default connect(

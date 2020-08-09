@@ -1,12 +1,14 @@
 import React from 'react'
-import './BookActionBtn.scss'
+import cn from 'classnames'
+import s from './BookActionBtn.module.scss'
+import Button from '../Button'
 
 const BookActionBtn = ({ type, onClick }) => {
     const iconSize = '1em'
 
     if (type === 'edit') {
         return (
-            <button className="book_action_btn edit" onClick={ onClick }>
+            <Button classNames={ cn(s.book_action_btn, s.edit) } onClick={ onClick }>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
                     x="0" y="0" width={iconSize} height={iconSize}
                     viewBox="0 0 528.899 528.899"
@@ -20,12 +22,12 @@ const BookActionBtn = ({ type, onClick }) => {
                             L27.473,390.597L0.3,512.69z"/>
                     </g>
                 </svg>
-            </button>
+            </Button>
         )
     }
 
     return (
-        <button className="book_action_btn remove" onClick={ onClick }>
+        <Button classNames={ cn(s.book_action_btn, s.remove) } onClick={ onClick }>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" width={iconSize} height={iconSize}>
                 <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19
                         0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93
@@ -35,7 +37,7 @@ const BookActionBtn = ({ type, onClick }) => {
                         100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28
                         12.28-32.19 0-44.48L242.72 256z"/>
                 </svg>
-        </button>
+        </Button>
     )
 }
 

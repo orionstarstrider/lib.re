@@ -1,0 +1,59 @@
+@import "../../common.scss";
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &.shown {
+        .window {
+            transform: scale(1);
+        }
+
+        .fade {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,.66);
+        }
+    }
+
+    .fade {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 0;
+        height: 0;
+        background-color: transparent;
+        transition: background-color .4s;
+    }
+
+    .window {
+        width: 450px;
+        max-height: 90vh;
+        margin: 15px;
+        padding: 15px;
+        background: #FFF;
+        border-radius: 2px;
+        transform: scale(0);
+        transition: transform .4s;
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0 20px;
+
+            .title_text {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@include md {
+    .modal {
+        .window {
+            padding: 30px;
+        }
+    }
+}
